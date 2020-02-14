@@ -22,6 +22,8 @@ import androidx.ui.tooling.preview.Preview
 import xyz.absolutez3ro.championgram.data.spidermanStory
 import xyz.absolutez3ro.championgram.model.Story
 import xyz.absolutez3ro.championgram.model.StoryStatus
+import xyz.absolutez3ro.championgram.ui.Screen
+import xyz.absolutez3ro.championgram.ui.navigateTo
 
 @Composable
 fun HomeStory(story: Story) {
@@ -29,7 +31,7 @@ fun HomeStory(story: Story) {
 
     Ripple(bounded = true) {
         Clickable(onClick = {
-            //navigateTo(Screen.Story(storyId = story.id))
+            navigateTo(Screen.Story(storyId = story.id))
             story.status = StoryStatus.SEEN
         }) {
             Container(modifier = Size(96.dp, 116.dp)) {

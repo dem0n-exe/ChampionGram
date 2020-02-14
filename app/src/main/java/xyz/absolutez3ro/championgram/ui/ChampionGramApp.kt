@@ -4,6 +4,7 @@ import androidx.compose.Composable
 import androidx.ui.animation.Crossfade
 import androidx.ui.material.MaterialTheme
 import xyz.absolutez3ro.championgram.ui.home.HomeScreen
+import xyz.absolutez3ro.championgram.ui.story.StoryScreen
 
 @Composable
 fun ChampionGramApp() {
@@ -17,7 +18,7 @@ fun MainScreen() {
     Crossfade(current = Navigation.currentScreen) { screen ->
         when (screen) {
             is Screen.Home -> HomeScreen()
-            // TODO(Add Story screen)
+            is Screen.Story -> StoryScreen(storyId = screen.storyId)
             // TODO(Add Profile screen)
         }
     }
