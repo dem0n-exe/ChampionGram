@@ -17,6 +17,8 @@ import androidx.ui.text.font.FontStyle
 import androidx.ui.tooling.preview.Preview
 import xyz.absolutez3ro.championgram.data.spiderman
 import xyz.absolutez3ro.championgram.model.Champion
+import xyz.absolutez3ro.championgram.ui.Screen
+import xyz.absolutez3ro.championgram.ui.navigateTo
 
 @Composable
 fun HomeChampionCard(champion: Champion) {
@@ -25,7 +27,7 @@ fun HomeChampionCard(champion: Champion) {
     Card(shape = RoundedCornerShape(12.dp), modifier = Spacing(8.dp)) {
         Ripple(bounded = true) {
             Clickable(onClick = {
-                //navigateTo(Screen.Profile(championId = champion.id))
+                navigateTo(Screen.Profile(championId = champion.id))
             }) {
                 Column {
                     Container(modifier = ExpandedWidth wraps Size(0.dp, 280.dp)) {
